@@ -1,11 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.shoto.pos.controller.SignupFormController">
+<AnchorPane prefHeight="400.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.shoto.pos.controller.SignupFormController">
    <children>
-      <JFXTextField labelFloat="true" layoutX="89.0" layoutY="102.0" promptText="Singgup" />
+      <ImageView fitHeight="123.0" fitWidth="130.0" layoutX="170.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/singup.png" />
+         </image>
+      </ImageView>
+      <JFXTextField labelFloat="true" layoutX="29.0" layoutY="105.0" prefHeight="25.0" prefWidth="245.0" promptText="Email">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </JFXTextField>
+      <JFXTextField labelFloat="true" layoutX="28.0" layoutY="160.0" prefHeight="25.0" prefWidth="245.0" promptText="Password">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </JFXTextField>
+      <JFXButton layoutX="26.0" layoutY="234.0" prefHeight="35.0" prefWidth="245.0" style="-fx-background-color: #0084F2;" text="Register Now" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </JFXButton>
+      <Text layoutX="138.0" layoutY="305.0" strokeType="OUTSIDE" strokeWidth="0.0" text="OR" />
+      <JFXButton layoutX="26.0" layoutY="330.0" prefHeight="35.0" prefWidth="245.0" style="-fx-background-color: #192239;" text="already have an account" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </JFXButton>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutY="-17.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/name.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
