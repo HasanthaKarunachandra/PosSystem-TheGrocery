@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="400.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.shoto.pos.controller.LoginFormController">
+   <children>
+      <ImageView fitHeight="380.0" fitWidth="306.0" layoutX="6.0" layoutY="87.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/Back.png" />
+         </image>
+      </ImageView>
+      <JFXTextField labelFloat="true" layoutX="30.0" layoutY="76.0" prefHeight="25.0" prefWidth="245.0" promptText="Email">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></JFXTextField>
+      <JFXTextField labelFloat="true" layoutX="29.0" layoutY="131.0" prefHeight="25.0" prefWidth="245.0" promptText="Password">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </JFXTextField>
+      <JFXButton layoutX="27.0" layoutY="205.0" prefHeight="35.0" prefWidth="245.0" style="-fx-background-color: #0084F2;" text="Sign in" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </JFXButton>
+      <Text layoutX="139.0" layoutY="276.0" strokeType="OUTSIDE" strokeWidth="0.0" text="OR" />
+      <JFXButton layoutX="27.0" layoutY="301.0" prefHeight="35.0" prefWidth="245.0" style="-fx-background-color: #192239;" text="Sign in" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </JFXButton>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="80.0" layoutY="-28.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/name.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
