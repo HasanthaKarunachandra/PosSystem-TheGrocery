@@ -2,7 +2,9 @@ package com.shoto.pos.controller;
 
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
+import com.shoto.pos.dao.DatabaseAccessCode;
 import com.shoto.pos.util.PasswordManager;
+import dto.UserDto;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -21,17 +23,10 @@ public class LoginFormController {
 
     public void btnSignInOnAction(ActionEvent actionEvent) {
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/thegrocery",
-                    "root","1234");
-            String sql = "SELECT * FROM user WHERE email=?";
-            PreparedStatement preparedStatement= connection.prepareStatement(sql);
-            preparedStatement.setString(1,txtEmail.getText());
-
-            ResultSet set= preparedStatement.executeQuery();
-            if(set.next()){
-                if(PasswordManager.checkPassword(txtPassword.getText(),set.getString("password"))){
-                    System.out.println("Completed");
+            UserDto ud = DatabaseAccessCode.findUser(txtEmail.getText());
+            if(ud!= null){
+                if(PasswordManager.checkPassword(txtPassword.getText(),ud.getPassword())){
+                    setUi("DashboardForm");
                 } else {
                     new Alert(Alert.AlertType.WARNING,"Check your password and try again!").show();
                 }
@@ -40,7 +35,7 @@ public class LoginFormController {
                 new Alert(Alert.AlertType.WARNING,"User email not found!").show();
             }
 
-        } catch (ClassNotFoundException | SQLException e){
+        } catch (ClassNotFoundException | SQLException | IOException e){
             e.printStackTrace();
             new Alert(Alert.AlertType.ERROR,e.getMessage()).show();
 
@@ -58,9 +53,10 @@ public class LoginFormController {
     }
     private void setUi(String url) throws IOException {
         Stage stage = (Stage) context.getScene().getWindow();
+        stage.centerOnScreen();
         stage.setScene(
                 new Scene(FXMLLoader.load(getClass().getResource("../view/"+url+".fxml")))
         );
-        stage.centerOnScreen();
+
     }
 }

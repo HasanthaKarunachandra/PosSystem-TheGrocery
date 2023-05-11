@@ -2,6 +2,7 @@ package com.shoto.pos.controller;
 
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
+import com.shoto.pos.dao.DatabaseAccessCode;
 import com.shoto.pos.util.PasswordManager;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -23,15 +24,8 @@ public class  SignupFormController {
 
     public void btnRegisterNowOnAction(ActionEvent actionEvent) {
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/thegrocery",
-                    "add your user","add your password");
-            String sql = "INSERT INTO user VALUES(?,?)";
-            PreparedStatement preparedStatement= connection.prepareStatement(sql);
-            preparedStatement.setString(1,txtEmail.getText());
-            preparedStatement.setString(2, PasswordManager.encryptPassword(txtPassword.getText()));
 
-            if(preparedStatement.executeUpdate()>0){
+            if(DatabaseAccessCode.createUser(txtEmail.getText(),txtPassword.getText())){
                 new Alert(Alert.AlertType.CONFIRMATION,"User Saved").show();
                 clearFields();
             }else {
@@ -56,9 +50,10 @@ public class  SignupFormController {
 
     private void setUi(String url) throws IOException {
         Stage stage = (Stage) context.getScene().getWindow();
+        stage.centerOnScreen();
         stage.setScene(
                 new Scene(FXMLLoader.load(getClass().getResource("../view/"+url+".fxml")))
         );
-        stage.centerOnScreen();
+
     }
 }
