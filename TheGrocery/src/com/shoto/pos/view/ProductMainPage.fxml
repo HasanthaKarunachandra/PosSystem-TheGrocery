@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="525.0" prefWidth="920.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.shoto.pos.controller.ProductMainPageController">
+   <children>
+      <Label layoutX="24.0" layoutY="24.0" prefHeight="31.0" prefWidth="168.0" text="Product Management" textFill="#650202">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Separator layoutX="24.0" layoutY="57.0" prefHeight="4.0" prefWidth="885.0" />
+      <JFXButton layoutX="820.0" layoutY="27.0" onAction="#btnBackToHome" style="-fx-background-color: #7f8c8d;" text="Back to home" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <AnchorPane layoutX="24.0" layoutY="68.0" prefHeight="445.0" prefWidth="353.0" style="-fx-background-color: #dfe6e9;">
+         <children>
+            <JFXButton layoutX="235.0" layoutY="10.0" onAction="#btnNewCustomerOnAction" style="-fx-background-color: #2980b9;" text="+ New Product" textFill="WHITE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXTextField editable="false" layoutX="14.0" layoutY="10.0" promptText="Product Code" />
+            <TextArea layoutX="14.0" layoutY="50.0" prefHeight="133.0" prefWidth="323.0" promptText="Description">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </TextArea>
+            <JFXButton layoutX="235.0" layoutY="189.0" onAction="#btnNewCustomerOnAction" style="-fx-background-color: #2980b9;" text="Save Product" textFill="WHITE">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </JFXButton>
+            <TextField layoutX="14.0" layoutY="219.0" prefHeight="25.0" prefWidth="323.0" promptText="search here" />
+         </children>
+      </AnchorPane>
+      <TableView layoutX="36.0" layoutY="319.0" prefHeight="182.0" prefWidth="329.0">
+        <columns>
+          <TableColumn prefWidth="66.0" text="#" />
+          <TableColumn prefWidth="89.0" text="Desc" />
+            <TableColumn prefWidth="102.0" text="Show more" />
+            <TableColumn prefWidth="71.0" text="Delete" />
+        </columns>
+      </TableView>
+      <Separator layoutX="384.0" layoutY="61.0" orientation="VERTICAL" prefHeight="452.0" prefWidth="0.0" />
+      <TableView layoutX="387.0" layoutY="263.0" prefHeight="244.0" prefWidth="525.0">
+         <columns>
+            <TableColumn prefWidth="54.0" text="#" />
+            <TableColumn prefWidth="68.0" text="Qty" />
+            <TableColumn prefWidth="78.0" text="Selling Price" />
+            <TableColumn prefWidth="83.0" text="Buying Price" />
+            <TableColumn prefWidth="74.0" text="D:Av" />
+            <TableColumn prefWidth="85.0" text="Show Price" />
+            <TableColumn prefWidth="90.0" text="Delete" />
+         </columns>
+      </TableView>
+      <TextArea layoutX="390.0" layoutY="116.0" prefHeight="133.0" prefWidth="525.0" promptText="Description">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </TextArea>
+      <JFXButton layoutX="789.0" layoutY="75.0" onAction="#btnNewCustomerOnAction" prefHeight="25.0" prefWidth="122.0" style="-fx-background-color: #2980b9;" text="+ New Batch" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <TextField layoutX="390.0" layoutY="75.0" prefHeight="25.0" prefWidth="184.0" promptText="Selected Product Code" />
+   </children>
+</AnchorPane>

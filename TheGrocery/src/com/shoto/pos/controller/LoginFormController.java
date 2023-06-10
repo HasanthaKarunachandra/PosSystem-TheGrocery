@@ -57,6 +57,5 @@ public class LoginFormController {
         stage.setScene(
                 new Scene(FXMLLoader.load(getClass().getResource("../view/"+url+".fxml")))
         );
-
     }
 }
